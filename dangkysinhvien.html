@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đăng kí </title>
+</head>
+<body>
+<h2>ĐĂNG KÝ</h2>
+<input type="text" id="stu">
+<input type="button" onclick="addstu()" value="thêm sinh viên">
+<table border="1">
+    <tr>
+        <thead>
+        <th width="50px">STT</th>
+        <th width="50px">Họ và tên</th>
+        <th width="50px" colspan="2"></th>
+        </thead>
+    </tr>
+    <tr>
+        <tbody id="body"></tbody>
+    </tr>
+</table>
+<script>
+    let studen =[];
+    let x = 0;
+    let data = "";
+    function addstu() {
+        data = "";
+        studen[x] = document.getElementById("stu").value;
+        for (let i = 0; i < studen.length; i++) {
+            data += "<tr>";
+            data += "<td>" + i + "</td>";
+            data += "<td id=" + i + ">" + studen[i] + "</td>";
+            data += "</tr>";
+        }
+        document.getElementById("body").innerHTML= data;
+        x++;
+    }
+
+</script>
+</body>
+</html>
